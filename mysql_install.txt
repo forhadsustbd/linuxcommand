@@ -1,6 +1,5 @@
 ################################################################################
 #Mysql Install
-#Command: Start
 $ sudo apt-get install mysql-server-5.6
 
 #Mysql Remove Completely
