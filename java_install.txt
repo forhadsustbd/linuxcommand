@@ -31,7 +31,7 @@ sudo apt-get install openjdk-7-jre
 #Java Development Kit (JDK) Install
 sudo apt-get install openjdk-7-jdk
 
-
+#Command: End
 
 #Managing Java
 #When there are multiple Java installations on your Droplet, the Java version to use as default can be chosen. 
