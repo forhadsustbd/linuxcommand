@@ -1,0 +1,40 @@
+#Mysql Operation
+
+#Login Mysql:
+#Here root = username
+$ mysql -u root -p
+
+#Mysql version show:
+mysql > select version();
+
+#Current user
+mysql > select user();
+
+#Show databases:
+mysql > show databases;
+
+#Create database:
+mysql > create database databaseName;
+
+#Drop / Delete Database:
+mysql > drop database databaseName;
+
+#Open/Use Database
+mysql > use databaseName;
+
+#Database Table Show:
+mysql > show tables;
+
+#Create Table
+mysql > create table tableName ( 
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(20),
+	food VARCHAR(30),
+	confirmed CHAR(1),
+	signup_date DATE);
+
+#Describe Table
+mysql > descrive tableName;
+
+#Current Database:
+mysql > select database();
