@@ -1,5 +1,5 @@
 ########################################################################################################################
-# Oracle Java Install 
+#<b> Oracle Java Install</b> 
 
 #Link: https://www.digitalocean.com/community/tutorials/how-to-manually-install-oracle-java-on-a-debian-or-ubuntu-vps
 
