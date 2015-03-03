@@ -1,0 +1,104 @@
+#File related command
+
+#pwd (print working directory) command
+	#The tool displays your current directory.
+	$ pwd
+
+#cd (change directory) command
+	#home directory
+		$ cd ~
+	#parent directory
+		$ cd ..
+	#stay current directory
+		$ cd .
+	#previous direcoty 
+		$ cd -
+	#relative path from current directory
+		$ cd forhad/Downloads
+	#absolute path from root
+		$ cd /home/forhad/Downloads
+
+#ls command
+	#hidden file show
+		$ ls -a
+	#file shows human readable format
+		$ ls -lh
+
+#mkdir (make directory) command
+	#directory create
+		$ mkdir directoryName
+	#When given the option -p, then mkdir will create parent directories as needed
+		$ mkdir -p dir1/dir2/dir
+	#remove directory with recursively forcefully
+		$ rm -rf dir/
+	
+#file command
+	#Everything is a file. A directory is a special kind of file, but it is still a (case sensitive!) file.
+	#The file utility determines the file type.
+	#As a system administrator, you should use the file command to determine the file type. Here are some examples
+		$ file pic33.png
+		pic33.png: PNG image data, 3840 x 1200, 8-bit/color RGBA, non-interlaced
+		$ file /etc/passwd
+		/etc/passwd: ASCII text
+		$ file HelloWorld.c
+		HelloWorld.c: ASCII C program text
+
+#touch command
+	#create an empty file
+		$ touch file33
+
+#cp (copy) command
+	#copy one file. To copy a file, use cp with a source and a target argument.
+		$ cp file1.txt file2.txt
+	#copy to the another directory
+	#If the target is a directory, then the source files are copied to that target directory.
+		$ cp file2.txt dir2
+	#copy recursive
+	# To copy complete directories, use cp -r (the -r option forces recursive copying of all files in all subdirectories).
+		$ cp -r dir1/ dir2
+	#copy multiple files to directory
+	#You can also use cp to copy multiple files into a directory. In this case, the last argument(a.k.a. the target) must be a directory.
+		$ cp file42 file42.copy SinkoDeMayo dir42/
+
+#mv (move) command
+	#rename files with mv
+		$ mv file1.txt file2.txt
+	
+#head command
+	#You can use head to display the first ten lines of a file.
+		$ head /etc/passwd
+	#The head command can also display the first n lines of a file.
+		$ head -4 /etc/passwd
+
+#tail command
+	#the tail command will display the last ten lines of a file.
+		$ tail /etc/passwd
+	#You can give tail the number of lines you want to see.
+		$ tail -4 /etc/passwd
+
+#cat (concatenate) command
+	#you can use cat to display a file on the screen
+		$ cat /etc/resolv.conf
+	#One of the basic uses of cat is to concatenate files into a bigger (or complete) file.
+		$ cat part1 part2 part3 > all
+		$ cat all
+	#here part1 , part2 and part3 concatenate and create new file all. 
+
+	#create file
+		$ cat > winter.txt
+		$ cat winter.txt
+
+#du (disk usage) command
+	#To find out directory size or disk usage, then following thses commands
+		$ du /home/forhad
+	#shows directory size with all subdirectories
+	
+	#directory size with human readable format and specific directory only
+		$ du -sh /home/forhad
+
+#df (disk filesystem) command:
+	#It is used to get full summary of available and used disk space usage of file system on Linux system.
+		$ df -h
+	#Display Information of /home File System
+		$ df -hT /home
+
