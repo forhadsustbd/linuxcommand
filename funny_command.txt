@@ -45,5 +45,6 @@
 #aview (ASCII view) command:
 	#How about viewing an image in ASCII format on the terminal? We must have a package ‘aview‘ installed, just apt or yum it.
 	# I’ve an image named ‘elephant.jpg‘ in my current working directory and I want view it on terminal as ASCII format.
+		$ sudo apt-get install aview
 		$ asciiview elephant.jpg -driver curses 
 
