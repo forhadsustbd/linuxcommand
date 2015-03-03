@@ -1,0 +1,96 @@
+###################################################################################################################################
+					# Package Management #
+
+# What is APT-GET
+	#The apt-get utility is a powerful and free package management command line program, that is used to work with Ubuntu’s 
+	APT (Advanced Packaging Tool) library to perform installation of new software packages, removing existing software packages,
+	upgrading of existing software packages and even used to upgrading the entire operating system.
+
+# What is APT-Cache?
+	#The apt-cache command line tool is used for searching apt software package cache 
+		$ sudo apt-cache search wordpress
+	
+# How Do I List All Available Packages
+	# To list all the available packages, type the following command.
+		$ sudo apt-cache pkgnames
+
+# How Do I Find Out Package Name and Description of Software
+	# To find out the package name and with it description before installing, use the ‘search‘ flag. 
+		$ sudo apt-cache search vsftpd
+	# To find and list down all the packages starting with ‘vsftpd‘, you could use the following command.
+		$ sudo apt-cache pkgnames vsftpd
+
+# How Do I Check Package Information
+	$ sudo apt-cache show netcat
+
+# How to Update System Packages
+	$ sudo apt-get update
+# How Do I Install or Upgrade Specific Packages?
+	$ sudo apt-get install netcat
+
+# How Do I Remove / Uninstall Packages Without Configuration
+	$ sudo apt-get remove vsftpd
+# How Do I Completely Remove Packages
+	$ sudo apt-get purge vsftpd
+
+# How Do I Check Broken Dependencies?
+	# The ‘check‘ command is a diagnostic tool. It used to update package cache and checks for broken dependencies.
+		$ sudo apt-get check
+# How Do I Search and Build Dependencies?
+	# This ‘build-dep‘ command searches the local repositories in the system and install the build dependencies for package. 
+	If the package does not exists in the local repository it will return an error code.
+		$ sudo apt-get build-dep netcat
+# How I Can Auto clean Apt-Get Cache
+	# The ‘autoclean‘ command deletes all .deb files from /var/cache/apt/archives to free-up significant volume of disk space.
+		$ sudo apt-get autoclean
+# How I Can Auto remove Installed Packages
+	# The ‘autoremove‘ sub command is used to auto remove packages that were certainly installed to satisfy dependencies 
+	for other packages and but they were now no longer required. For example, the following command will remove an installed 
+	package with its dependencies.
+		$ sudo apt-get autoremove vsftpd
+
+
+# Useful Link: http://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/
+
+##################################################################################################################################
+
+# What is YUM?
+	# YUM (Yellowdog Updater Modified) is an open source command-line as well as graphical based package management tool for 
+	RPM (RedHat Package Manager) based Linux systems. 
+
+# Install a Package with YUM
+	#To install a package called Firefox 14, just run the below command it will automatically find and install all required 
+	dependencies for Firefox.
+		$ sudo yum install firefox
+	# The above command will ask confirmation before installing any package on your system. If you want to install packages 
+	automatically without asking any confirmation, use option -y as shown in below example.
+		$ sudo yum -y install firefox
+
+# Removing a Package with YUM
+	$ sudo yum remove firefox
+	$ sudo yum -y remove firefox
+
+# Updating a Package using YUM
+	$ sudo yum update mysql
+# List a Package using YUM
+	$ sudo yum list openssh
+# Search for a Package using YUM
+	$ sudo yum search vsftpd
+# Get Information of a Package using YUM
+	$ sudo yum info firefox
+# List all Installed Packages using YUM
+	$ sudo yum list installed | less
+# Check for Available Updates using Yum
+	$ sudo yum check-update
+# Update System using Yum
+	$ sudo yum update
+# List all available Group Packages
+	$ sudo yum grouplist
+#  Install a Group Packages
+	$ sudo yum groupinstall 'MySQL Database'
+# Update a Group Packages
+	$ sudo yum groupupdate 'DNS Name Server'
+# Remove a Group Packages
+	$ sudo yum groupremove 'DNS Name Server'
+
+#################################################################################################################################33
