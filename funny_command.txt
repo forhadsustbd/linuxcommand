@@ -1,0 +1,49 @@
+#sl command
+	#install
+		$ sudo apt-get install sl 
+	#run sl and display a train....
+		$ sl
+
+#command telnet
+	$ telnet towel.blinkenlights.nl
+
+#fortune command
+	#fortune command tell a rondom quote
+		$ sudo apt-get install fortune
+		$ fortune
+
+#Cowsay command
+	#An ASCII cow in terminal that will say what ever you want.
+		$ sudo apt-get install cowsay
+		$ cowsay I Love nix 
+		$ fortune | cowsay
+
+	#Xcowsay  is a graphical program which response similar to cowsay but in a graphical manner, hence it is X of cowsay.
+		$ sudo apt-get insatll xcowsay
+		$ xcowsay I Love nix
+	#cowthink is another command just run “cowthink Linux is sooo funny” and see the difference in output of cowsay and cowthink.
+		$ sudo apt-get insatll cowthink
+		$ cowthink ....Linux is sooo funny
+
+#toilet command
+	$ sudo apt-get install toilet 
+	$ toilet techmint
+
+#cmatrix command
+	$ sudo apt-get install cmatrix
+	$ cmatrix
+
+#pv command
+	#You might have seen simulating text in movies. It appears as, it is being typed in real time. Won’t it be nice, 
+	#if you can have such an effect in terminal?This can be achieved, by installing ‘pv‘ command.
+		$ sudo apt-get install pv
+		$ echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10 
+
+	# Note:  The ‘q‘ option means ‘quite’, no output information and option ‘L‘ means the Limit of Transfer of 
+	#bytes per second. The number value can be adjusted in either direction (must be integer) to get desired simulation of text.
+
+#aview (ASCII view) command:
+	#How about viewing an image in ASCII format on the terminal? We must have a package ‘aview‘ installed, just apt or yum it.
+	# I’ve an image named ‘elephant.jpg‘ in my current working directory and I want view it on terminal as ASCII format.
+		$ asciiview elephant.jpg -driver curses 
+
