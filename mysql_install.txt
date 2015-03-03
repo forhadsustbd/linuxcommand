@@ -1,17 +1,17 @@
 ################################################################################
 #Mysql Install
-$ sudo apt-get install mysql-server-5.6
+	$ sudo apt-get install mysql-server-5.6
 
 #Mysql Remove Completely
-$ sudo apt-get remove --purge mysql-server mysql-client mysql-common
-$ sudo rm -rf /var/lib/mysql
+	$ sudo apt-get remove --purge mysql-server mysql-client mysql-common
+	$ sudo rm -rf /var/lib/mysql
 
 ################################################################################
 				##MySQL Configuration
 #Mysql Default Port = 3306
 
 #Mysql Running check
-telnet localhost 3306
+	telnet localhost 3306
 
 #Mysql configuration file Directory:
 #There is no internal MySQL command to trace this, it's a little too abstract. The file might 
