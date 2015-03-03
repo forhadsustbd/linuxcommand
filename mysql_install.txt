@@ -7,3 +7,21 @@ $ sudo apt-get remove --purge mysql-server mysql-client mysql-common
 $ sudo rm -rf /var/lib/mysql
 
 ################################################################################
+				##MySQL Configuration
+#Mysql Default Port = 3306
+
+#Mysql Running check
+telnet localhost 3306
+
+#Mysql configuration file Directory:
+#There is no internal MySQL command to trace this, it's a little too abstract. The file might 
+#be in 5 (or more?) locations, and they would all be valid because they load cascading.
+	1. /etc/mysql/my.cnf
+	2. /etc/my.cnf
+	3. $MYSQL_HOME/my.cnf
+	4. ~/.my.cnf
+
+################################################################################
+
+
+
