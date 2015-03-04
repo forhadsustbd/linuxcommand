@@ -53,7 +53,7 @@ $ Enter same passphrase again: [Type passphrase again]
 		#Scp method
 		$ scp - ~/.ssh/id_rsa.pub username@hostName:~/.ssh/authorized_keys
 		# Another Easy method
-		$ ssh-copy-id username@hostName
+		$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostName
 		
 	# Now login
 

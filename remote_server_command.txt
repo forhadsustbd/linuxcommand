@@ -1,0 +1,117 @@
+############################################################################################################################
+				# SSH to Connect to a Remote Server #
+
+# The most basic form of the command is:
+	$ ssh remote_username@remote_host
+
+# Default Port SSH is : 22
+
+# password less login:
+	$ ssh-keygen -t rsa -C "your_email@example.com"
+
+	# Default Your private key has been saved in /Users/you/.ssh/id_rsa.
+	# Default Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+
+	# start the ssh-agent in the background	
+	$ eval "$(ssh-agent -s)"
+
+	$ ssh-add ~/.ssh/id_rsa
+
+	# copy public key
+	$ ssh-copy-id -i ~/.ssh/id_rsa.pub username@hostName 
+
+	# Now just login without password
+	$ ssh remote_username@remote_host
+
+# Disable the root login
+	# login remote server
+	$ sudo vim /etc/ssh/sshd_config
+	# Find PermitRootLogi0
+	> PermitRootLogin no
+	# Save and close the file, then restart ssh
+	$ sudo service ssh restart
+
+# Disable the password login
+        # login remote server
+        $ sudo vim /etc/ssh/sshd_config
+        # Find PasswordAuthentication set it as follows:
+        > PasswordAuthentication no
+        # Save and close the file, then restart ssh
+        $ sudo service ssh restart
+
+# Changing the Port that the SSH Daemon Runs On
+	# login remote server
+        $ sudo vim /etc/ssh/sshd_config
+	# Find Port and change the number
+	> Port 22
+	change to ex: > Port 4444
+	# Save and close the file, then restart ssh
+	$ sudo service ssh restart
+
+# Limiting the Users Who can Connect Through SSH
+	# login remote server
+	$ sudo vim /etc/ssh/sshd_config
+	#Fint out AllowUsers and change
+	> AllowUsers user1 user2
+	# Save and close the file, then restart ssh
+	$ sudo service ssh restart
+
+
+# ssh-copy-id - install your public key in a remote machine's authorized_keys
+
+# To copy a key to a remote host default path ~/.ssh/id_rsa.pub:
+	ssh-copy-id username@host
+
+# To copy a key to a remote host on a non-standard port:
+	ssh-copy-id username@host -p 2222
+
+# To connect on an non-standard port:
+	$ ssh -p 2222 username@hostname
+
+# To ssh via pem file (which normally needs 0600 permissions):
+	$ ssh -i /path/to/file.pem username@hostname
+
+# To execute a command on a remote server:
+	$ ssh -t user@example.com 'the-remote-command'
+
+# X-Forwarding login or Forwarding X Application Displays to the Client
+	# login remote server
+        $ sudo vim /etc/ssh/sshd_config
+        # Find X11Forwarding
+        > PermitRootLogin yes
+	# File save and close, then restart ssh service
+	$ sudo service ssh restart
+	
+	# first install xauth remote server
+	$ sudo apt-get install xauth
+
+	# connect following command from client
+	$ ssh -X username@hostname
+
+	# after login its can now use by graphic. For example
+	# first install xeyes graphic eyes package
+	$ sudo apt-get install x11-apps
+	$ xeyes
+
+	# firefox test
+	$ firefox &
+
+# To launch a specific X application over SSH:
+	$ ssh -X -t user@example.com 'chromium-browser'
+
+# -X use an xsession, -C compress data, "-c blowfish" use the encryption blowfish
+	$ ssh user@example.com -C -c blowfish -X
+
+# Remote copy and download file
+	# To copy a file from your local machine to a remote server:
+		$ scp foo.txt user@example.com:remote/dir
+
+	# To copy a file from a remote server to your local machine:
+		$ scp user@example.com:remote/dir/foo.txt local/dir
+
+# For more information, see:
+        # http://unix.stackexchange.com/q/12755/44856
+	# http://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/
+	# https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys
+
+
